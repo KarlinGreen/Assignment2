@@ -1,22 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Pub Stop' });
-});
-
-//GET Pub List
-router.get('/pubList', function(req, res, next){
-  res.render('pubList', { title: 'Pub List'});
-});
-
+// GET the signIn page
 router.get('/signIn', function(req, res, next){
   res.render('auth/signIn', {title: 'Sign In'});
 });
 
+// GET the signUp page
 router.get('/signUp', function(req, res, next){
   res.render('auth/signUp', {title: 'Sign Up'});
 });
 
-module.exports = router;
+module.exports = auth;

@@ -1,0 +1,15 @@
+<%- include ../partials/header.ejs %>
+<div class="container">
+<h1><%= title %></h1>
+<form id="signinForm">
+  <label for="uName">Username: </label>
+  <input id="uName" type="text" required="true"></input>
+</br>
+  <label for="pWord">Password:  </label>
+  <input id="pWord" type="password" required="true"></input>
+</form>
+<section>
+  <p>Don't have an account? <a href="../signUp"> Sign up here</a></p>
+</section>
+</div>
+<%- include ../partials/footer.ejs %>
