@@ -1,12 +1,25 @@
+<!--Name: signUp.ejs
+    Author: Karlin Green
+    Site Name: Pub Stop (The one stop app for pub crawling).
+    Purpose: Signup for people to create an account to allow access to deleting, or updating the Pub List.
+    -->
+
 <%- include ../partials/header.ejs %>
-<div class="container">
-<h1><%= title %></h1>
-<form id="signupForm">
-  <label for="uName">Username: </label>
-  <input id="uName" type="text" required="true"></input>
-</br>
-  <label for="pWord">Password:  </label>
-  <input id="pWord" type="password" required="true"></input>
-</form>
+<div class="container col-xs-4 col-xs-offset-4 col-s-4 col-s-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4" id="content">
+  <div>
+    <h1 id="sfTitle"><%= title %></h1>
+  </br>
+      <form id="Form">
+          <label for="uName">Username: </label>
+          <input id="uName" type="text" required="true"></input>
+        </br>
+          <label for="pWord">Password:  </label>
+          <input id="pWord" type="password" required="true"></input>
+        </form>
+      </br>
+       <section>
+         <p>Create an account to add your favourite Pub to the list (if it's not there already)</p>
+       </section>
+  <div>
 </div>
 <%- include ../partials/footer.ejs %>

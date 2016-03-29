@@ -1,15 +1,25 @@
+<!--Name: signUp.ejs
+    Author: Karlin Green
+    Site Name: Pub Stop (The one stop app for pub crawling).
+    Purpose: Signin page for people to signin and update the Pub list.
+    -->
+
 <%- include ../partials/header.ejs %>
-<div class="container">
-<h1><%= title %></h1>
-<form id="signinForm">
-  <label for="uName">Username: </label>
-  <input id="uName" type="text" required="true"></input>
-</br>
-  <label for="pWord">Password:  </label>
-  <input id="pWord" type="password" required="true"></input>
-</form>
-<section>
-  <p>Don't have an account? <a href="../signUp"> Sign up here</a></p>
-</section>
+<div class="container col-xs-4 col-xs-offset-4 col-s-4 col-s-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4" id="content">
+  <div>
+    <h1 id="sfTitle"><%= title %></h1>
+  </br>
+      <form id="Form">
+        <label for="uName">Username: </label>
+        <input id="uName" type="text" required="true"></input>
+      </br>
+        <label for="pWord">Password:  </label>
+        <input id="pWord" type="password" required="true"></input>
+      </form>
+    </br>
+      <section>
+        <p>Don't have an account? <a href="../signUp"> Sign up here</a></p>
+      </section>
+    </div>
 </div>
 <%- include ../partials/footer.ejs %>

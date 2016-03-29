@@ -19,4 +19,13 @@ router.get('/signUp', function(req, res, next){
   res.render('auth/signUp', {title: 'Sign Up'});
 });
 
+router.get('/updateList', function(req, res, next){
+  res.render('edit/updateList', {title: 'Update List'});
+});
+
+router.get('/addPub', function(req, res, next){
+  res.render('edit/addPub', {title: 'Add A Pub'});
+});
+
+
 module.exports = router;
