@@ -1,7 +1,7 @@
-<!--Name: pubList.ejs
+<!--Name: authPubList.ejs
     Author: Karlin Green
     Site Name: Pub Stop (The one stop app for pub crawling).
-    Purpose: This will be the page where the pub details will be listed.
+    Purpose: This will be the page where the pub details will be listed, and edited by tuthenticated users.
     -->
 
 <%- include partials/header.ejs %>
@@ -34,7 +34,7 @@
           <td>188 Cool St.</td>
           <td>Maury Mckevich</td>
           <td>MckMaury@Example.com</td>
-        <!--  <td><a href="../updateList" class="btn btn-success">Update!</a></td> -->
+          <td><a href="../updateList" class="btn btn-success">Update!</a></td>
         </tr>
         <tr>
           <td>Example 2</td>
@@ -42,13 +42,13 @@
           <td>165 Ashburry Rd.</td>
           <td>Ryan O'Riley</td>
           <td>ORyan@Example2.co.ca</td>
-      <!--    <td><a href="../updateList" class="btn btn-success">Update!</a></td> -->
+          <td><a href="../updateList" class="btn btn-success">Update!</a></td>
         </tr>
       </tbody>
     </table>
   </section>
   <section>
-  <!--  <p><a href="../addPub" class="btn btn-primary">Add a Pub!</a></p> -->
+    <p><a href="../addPub" class="btn btn-primary">Add a Pub!</a></p>
   </section>
   <section id="authLinks">
     <p>Want to add a Pub to the list? <a href="../signIn">Sign in here!</a> OR <a href="../signUp"> Create an account! </a></p>

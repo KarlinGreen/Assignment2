@@ -27,5 +27,9 @@ router.get('/addPub', function(req, res, next){
   res.render('edit/addPub', {title: 'Add A Pub'});
 });
 
+router.get('/authPubList', function(req, res, next){
+  rs.render('authPubList', {title: 'Authenticated Pub List'})
+});
+
 
 module.exports = router;
