@@ -11,12 +11,7 @@ var mongoose = require('mongoose');
 // auth packages
 var passport = require('passport');
 
-// var routes = require('./routes/index');
-// var users = require('./routes/users');
-// var auth = require('./routes/auth');
-// var edit = require('./routes/edit');
-
-
+//route variables to call upon
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/edit');
@@ -35,12 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// app.use('/', routes);
-// app.use('/users', users);
-// app.use('/auth', auth);
-// app.use('/edit', edit);
-
+// get the routes for our pages
 app.use('/', routes);
 app.use('/users', users);
 app.use('/edit', edit);

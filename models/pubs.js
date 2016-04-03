@@ -1,7 +1,7 @@
 //mongoose link
 var mongoose = require('mongoose');
 
-// pub schema (how the data will be puut intoo the table)
+// pub schema (how the data will be put into the table)
 var pubSchema = new mongoose.Schema({
   name:{
     type: String,
