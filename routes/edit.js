@@ -9,12 +9,12 @@ router.get('/', function(req, res, next){
   Pub.find(function(err, pubs){
     if (err) {
       console.log(err);
-      res.end(err)
+      res.end(err);
     }
     else {
-      res.render('../authPubList', {
+      res.render('edit/authPubList', {
          title: 'Authenticated Pub List',
-         pubs: pubs
+         pub: pub
       });
     }
   });
@@ -32,7 +32,7 @@ router.post('/addPub', function(req, res, next){
     owner: req.body.owner,
     email: req.body.email
   });
-  res.redirect('../authPubList');
+  res.redirect('/edit');
 });
 
 router.get('/:id', function(req, res, next){
@@ -62,13 +62,14 @@ router.post('/:id', function(req, res, next){
     owner: req.body.owner,
     email: req.body.email
   });
-  Article.update({_id: id}, pub, function(err){
+
+  Pub.update({_id: id}, pub, function(err){
     if(err) {
       console.log(err);
       res.end(err);
     }
     else{
-      res.redirect('../authPubList');
+      res.redirect('/edit');
     }
   });
 });

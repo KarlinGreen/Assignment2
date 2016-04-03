@@ -6,26 +6,38 @@
 
 <%- include ../partials/header.ejs %>
 <div class="container col-xs-4 col-xs-offset-4 col-s-4 col-s-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4" id="content">
-  <div class="wellS">
+  <div class="well">
     <h1 id="sfTitle"><%= title %></h1>
     <form method="post" action="addPub">
+
       <label for="name">Pub Name: </label>
       <input name="name" type="text"></input>
+
     </br>
+
       <label for="phone">Phone Number: </label>
       <input name="phone" type="phone"></input>
+
     </br>
+
       <label for="address">Pub Address: </label>
       <input name="address" type="text"></input>
+
     </br>
+    
       <label for="owner">Pub Owner: </label>
       <input name="owner" type="text"></input>
+
     </br>
+
       <label for="email">Pub Email: </label>
       <input name="email" type="text"></input>
+
     </br>
+
     <button type="submit" class="btn btn-info">Submit</button>
+
     </form>
-</div>
+  </div>
 </div>
 <%- include ../partials/footer.ejs %>

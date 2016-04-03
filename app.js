@@ -8,13 +8,19 @@ var bodyParser = require('body-parser');
 // require mongoose for database integration
 var mongoose = require('mongoose');
 
-//
+// auth packages
 var passport = require('passport');
+
+// var routes = require('./routes/index');
+// var users = require('./routes/users');
+// var auth = require('./routes/auth');
+// var edit = require('./routes/edit');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var auth = require('./routes/auth');
-var edit = require('./routes/edit');
+var auth = require('./routes/edit');
+var edit = require('./routes/auth');
 
 var app = express();
 
@@ -29,10 +35,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// app.use('/', routes);
+// app.use('/users', users);
+// app.use('/auth', auth);
+// app.use('/edit', edit);
+
 app.use('/', routes);
 app.use('/users', users);
-app.use('/auth', auth);
 app.use('/edit', edit);
+app.use('/auth', auth);
 
 // read db connection from config/db.js
 var configDb = require('./config/db.js');
