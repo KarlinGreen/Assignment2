@@ -14,8 +14,8 @@ var passport = require('passport');
 //route variables to call upon
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var auth = require('./routes/edit');
-var edit = require('./routes/auth');
+var edit = require('./routes/edit');
+var auth = require('./routes/auth');
 
 var app = express();
 
