@@ -29,8 +29,11 @@ console.log('log test');
 });
 
 // Create our add page for authenticated users
+console.log('log test');
 router.get('/:id', function(req, res, next){
-  res.render('../edit/addPub', {title: 'Add A Pub',
+  // not getting to second log - ^ problem above
+  console.log('It gets here');
+  res.render('edit/addPub', {title: 'Add A Pub',
   });
 });
 
