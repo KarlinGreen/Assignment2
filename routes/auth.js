@@ -5,6 +5,7 @@ var router = express.Router();
 var passport = require('passport');
 var mongoose = require('mongoose');
 var configDb = require('../config/db.js');
+var Account = require('../models/account');
 
 // GET sign in page
 router.get('/signIn', function(req, res, next){

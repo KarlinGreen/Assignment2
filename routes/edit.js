@@ -9,7 +9,7 @@ var passport = require('passport');
 // Get our authPubList table
 router.get('/', function(req, res, next){
   // Use the pubs model to retrieve the info
-console.log('log test');
+//console.log('log test');
   // Pub.find(function(err, pubs){
 
     //if there's an issue, log it in the console. otherwise render the authPubList.
@@ -30,8 +30,8 @@ console.log('log test');
 
 // Create our add page for authenticated users
 console.log('log test');
-router.get('/:id', function(req, res, next){
-  // not getting to second log - ^ problem above
+router.get('/addPub', function(req, res, next){
+  // not getting to second log - ^ problem
   console.log('It gets here');
   res.render('edit/addPub', {title: 'Add A Pub',
   });
@@ -50,7 +50,7 @@ router.get('/:id', function(req, res, next){
 // });
 
 // Use the pub id to grab the info for our update page
-router.get('/:id', function(req, res, next){
+router.get('/updateList', function(req, res, next){
   // var id = req.params.id;
   //
   // //if there's an issue, log it in the console. otherwise redirect to the update page.
@@ -69,27 +69,27 @@ router.get('/:id', function(req, res, next){
 });
 
 // Post the updated info to the database
-router.post('/:id', function(req, res, next){
-  var id = req.params.id;
-  var pub = new Pub({
-    _id: id,
-    name: req.body.name,
-    phone: req.body.phone,
-    address: req.body.address,
-    owner: req.body.owner,
-    email: req.body.email
-  });
+// router.post('/:id', function(req, res, next){
+//   var id = req.params.id;
+//   var pub = new Pub({
+//     _id: id,
+//     name: req.body.name,
+//     phone: req.body.phone,
+//     address: req.body.address,
+//     owner: req.body.owner,
+//     email: req.body.email
+//   });
 
 // If there's an issue, log the error in the console. otherwise redirect the user to the home page.
-  Pub.update({_id: id}, pub, function(err){
-    if(err) {
-      console.log(err);
-      res.end(err);
-    }
-    else{
-      res.redirect('/');
-    }
-  });
-});
+//   Pub.update({_id: id}, pub, function(err){
+//     if(err) {
+//       console.log(err);
+//       res.end(err);
+//     }
+//     else{
+//       res.redirect('/');
+//     }
+//   });
+// });
 
 module.exports = router;

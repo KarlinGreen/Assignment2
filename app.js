@@ -37,12 +37,12 @@ app.use('/edit', edit);
 app.use('/auth', auth);
 
 //db connection
-// var db = mongoose.connnection;
-//
+var db = mongoose.connnection;
+
 // db.on('error', console.error.bind(console, 'DB error:'));
-//
+
 // db.once('open', function(callback){
-//   console.log('Connected to mlab');
+  // console.log('Connected to mlab');
 // });
 
 // read db connection from config/db.js
