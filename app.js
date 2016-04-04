@@ -36,8 +36,18 @@ app.use('/users', users);
 app.use('/edit', edit);
 app.use('/auth', auth);
 
+//db connection
+var db = mongoose.connnection
+
+db.on('error', console.error.bind(console, 'DB error:'));
+
+db.once('open', function(callback){
+  console.log('Connected to mlab');
+});
+
 // read db connection from config/db.js
 var configDb = require('./config/db.js');
+mongoose.connect(configDb.url);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
