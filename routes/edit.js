@@ -29,12 +29,8 @@ console.log('log test');
 });
 
 // Create our add page for authenticated users
-console.log('log test');
-router.get('/add', function(req, res, next){
-
-  // doesn't get past here 
-  console.log('log test2');
-  res.render('edit/addPub', {title: 'Add A Pub',
+router.get('/:id', function(req, res, next){
+  res.render('../edit/addPub', {title: 'Add A Pub',
   });
 });
 
@@ -51,7 +47,7 @@ router.get('/add', function(req, res, next){
 // });
 
 // Use the pub id to grab the info for our update page
-router.get('/update', function(req, res, next){
+router.get('/:id', function(req, res, next){
   // var id = req.params.id;
   //
   // //if there's an issue, log it in the console. otherwise redirect to the update page.
