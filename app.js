@@ -7,9 +7,11 @@ var bodyParser = require('body-parser');
 
 // require mongoose for database integration
 var mongoose = require('mongoose');
-
 // auth packages
 var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+var LocalStrategy = require('passport-local').Strategy;
 
 //route variables to call upon
 var routes = require('./routes/index');
@@ -30,6 +32,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// use flash to show messges if needed
+app.use(flash());
+
+app.use(session({
+  secret: 'Assignment2 auth',
+  resave: true,
+  saveUninitialized: false
+}));
+
+// use the created account model
+var Account = require('./models/account');
+passport.use(Account.createStrategy());
+passport.use(new LocalStrategy(Account.authenticate()));
+
+// methods which will enable us to access session data
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
 // get the routes for our pages
 app.use('/', routes);
 app.use('/users', users);
@@ -39,11 +59,11 @@ app.use('/auth', auth);
 //db connection
 var db = mongoose.connnection;
 
-// db.on('error', console.error.bind(console, 'DB error:'));
+db.on('error', console.error.bind(console, 'DB error:'));
 
-// db.once('open', function(callback){
-  // console.log('Connected to mlab');
-// });
+db.once('open', function(callback){
+  console.log('Connected to mlab');
+});
 
 // read db connection from config/db.js
 var configDb = require('./config/db.js');

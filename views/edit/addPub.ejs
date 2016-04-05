@@ -5,36 +5,31 @@
     -->
 
 <%- include ../partials/header.ejs %>
-<div class="container col-xs-4 col-xs-offset-4 col-s-4 col-s-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4" id="content">
+<div class="container col-xs-5 col-xs-offset-4 col-s-5 col-s-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4" id="content">
   <div class="well">
     <h1 id="sfTitle"><%= title %></h1>
-    <form method="post" action="addPub">
+    <form id="form" method="post" action="addPub">
 
-      <label for="name">Pub Name: </label>
-      <input name="name" type="text"></input>
-
-    </br>
-
-      <label for="phone">Phone Number: </label>
-      <input name="phone" type="phone"></input>
-
-    </br>
-
-      <label for="address">Pub Address: </label>
-      <input name="address" type="text"></input>
-
-    </br>
-    
-      <label for="owner">Pub Owner: </label>
-      <input name="owner" type="text"></input>
-
-    </br>
-
-      <label for="email">Pub Email: </label>
-      <input name="email" type="text"></input>
-
-    </br>
-
+      <fieldset class="form-group">
+        <label for="name">Pub Name: </label>
+        <input name="name" type="text"></input>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="phone">Phone Number: </label>
+        <input name="phone" type="phone"></input>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="address">Pub Address: </label>
+        <input name="address" type="text"></input>
+      <fieldset>
+      <fieldset class="form-group">
+        <label for="owner">Pub Owner: </label>
+        <input name="owner" type="text"></input>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="email">Pub Email: </label>
+        <input name="email" type="text"></input>
+      </fieldset>
     <button type="submit" class="btn btn-info">Submit</button>
 
     </form>
