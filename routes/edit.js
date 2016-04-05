@@ -7,7 +7,7 @@ var Pub = require('../models/pubs');
 var passport = require('passport');
 
 // Get our authPubList table
-router.get('/', function(req, res, next){
+router.get('/', isLoggedIn ,function(req, res, next){
   // Use the pubs model to retrieve the info
 //console.log('log test');
   // Pub.find(function(err, pubs){
@@ -30,7 +30,7 @@ router.get('/', function(req, res, next){
 
 // Create our add page for authenticated users
 console.log('log test');
-router.get('/addPub', function(req, res, next){
+router.get('/addPub', isLoggedIn ,function(req, res, next){
   // not getting to second log - ^ problem
   console.log('It gets here');
   res.render('edit/addPub', {title: 'Add A Pub',
@@ -50,7 +50,7 @@ router.get('/addPub', function(req, res, next){
 // });
 
 // Use the pub id to grab the info for our update page
-router.get('/updateList', function(req, res, next){
+router.get('/updateList', isLoggedIn , function(req, res, next){
   // var id = req.params.id;
   //
   // //if there's an issue, log it in the console. otherwise redirect to the update page.
@@ -91,5 +91,15 @@ router.get('/updateList', function(req, res, next){
 //     }
 //   });
 // });
+
+// authorization check
+function isLoggedIn(req, res, next){
+  if (req.isAuthenticated()){
+    return next();
+  }
+  else{
+    res.redirect('/auth/signIn');
+  }
+}
 
 module.exports = router;

@@ -36,6 +36,12 @@
           <td>MckMaury@Example.com</td>
           <td><a href="./edit/updateList" class="btn btn-success">Update!</a></td>
         </tr>
+        <% for (var i=0; i < pubs.length; i++){%>
+          <tr>
+            <td href="/routes/<%= pubs[i]._id %>"><%= pubs[i] %></td>
+            <td><a href="./edit/updateList" class="btn btn-success">Update!</a></td>
+          </tr>
+        <% } %>
       </tbody>
     </table>
   </section>
